@@ -1,0 +1,124 @@
+CREATE TABLE articulos (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    descripcion NVARCHAR(255) NOT NULL,
+    cantidad INT NULL
+);
+
+CREATE TABLE caja_chica (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    fecha DATE NOT NULL,
+    id_proveedor INT NULL,
+    monto DECIMAL(10, 2) NULL,
+    num_caja NVARCHAR(20) NULL,
+    pago BIT NULL,
+    CONSTRAINT FK_caja_chica_proveedor FOREIGN KEY (id_proveedor) REFERENCES proveedores (id)
+);
+
+CREATE TABLE cargas (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    fecha DATETIME NOT NULL,
+    id_service INT NULL,
+    id_toner INT NULL,
+    id_usuario INT NULL,
+    CONSTRAINT FK_CargaIdService_3F466844 FOREIGN KEY (id_service) REFERENCES servicios (id),
+    CONSTRAINT FK_CargaIdToner_403A8C7D FOREIGN KEY (id_toner) REFERENCES toners (id),
+    CONSTRAINT FK_CargaIdUsuario_3E52440B FOREIGN KEY (id_usuario) REFERENCES users (id)
+);
+
+CREATE TABLE codigo_computos (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    codigo NVARCHAR(50) NULL
+);
+
+CREATE TABLE components (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    estado_activo BIT NULL,
+    id_articulos INT NULL,
+    id_codigo_computos INT NULL,
+    id_historial_componente INT NULL,
+    id_metodo_adquisicion INT NULL,
+    num_patrimonio NVARCHAR(20) NULL,
+    CONSTRAINT FK_components_articulos FOREIGN KEY (id_articulos) REFERENCES articulos (id),
+    CONSTRAINT FK_components_codigo_computos FOREIGN KEY (id_codigo_computos) REFERENCES codigo_computos (id),
+    CONSTRAINT FK_components_historial_componente FOREIGN KEY (id_historial_componente) REFERENCES componentes_historiales (id),
+    CONSTRAINT FK_components_metodo_adquisicion FOREIGN KEY (id_metodo_adquisicion) REFERENCES metodos_adquisicion (id)
+);
+
+CREATE TABLE componentes_historiales (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    detalle NVARCHAR(255) NULL,
+    fecha DATE NULL
+);
+
+CREATE TABLE metodos_adquisicion (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    fecha DATE NULL,
+    id_caja_chica INT NULL,
+    id_pedido INT NULL,
+    otro NVARCHAR(50) NULL,
+    CONSTRAINT FK_metodos_adquisicion_caja_chica FOREIGN KEY (id_caja_chica) REFERENCES caja_chica (id),
+    CONSTRAINT FK_metodos_adquisicion_pedido FOREIGN KEY (id_pedido) REFERENCES pedidos (id)
+);
+
+CREATE TABLE pc (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    id_component INT NULL,
+    id_pc_historial INT NULL,
+    id_pc_nombres INT NULL,
+    id_services INT NULL,
+    CONSTRAINT FK_pc_components FOREIGN KEY (id_component) REFERENCES components (id),
+    CONSTRAINT FK_pc_pc_historial FOREIGN KEY (id_pc_historial) REFERENCES pc_historiales (id),
+    CONSTRAINT FK_pc_pc_nombres FOREIGN KEY (id_pc_nombres) REFERENCES pc_nombres (id),
+    CONSTRAINT FK_pc_services FOREIGN KEY (id_services) REFERENCES servicios (id)
+);
+
+CREATE TABLE pc_historiales (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    detalle NVARCHAR(255) NULL,
+    fecha DATE NULL,
+    id_user INT NULL,
+    CONSTRAINT FK_pc_historiales_user FOREIGN KEY (id_user) REFERENCES users (id)
+);
+
+CREATE TABLE pc_nombres (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    ip NVARCHAR(15) NULL,
+    user_pc NVARCHAR(50) NULL
+);
+
+CREATE TABLE pedidos (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    detalle NVARCHAR(255) NULL,
+    fecha DATE NULL,
+    id_proveedor INT NULL,
+    num_op NVARCHAR(20) NULL,
+    num_pedido NVARCHAR(20) NULL,
+    CONSTRAINT FK_pedidos_proveedor FOREIGN KEY (id_proveedor) REFERENCES proveedores (id)
+);
+
+CREATE TABLE proveedores (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    contacto NVARCHAR(100) NULL,
+    historial NVARCHAR(255) NULL,
+    nombre NVARCHAR(100) NULL
+);
+
+CREATE TABLE servicios (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    nombre NVARCHAR(50) NULL
+);
+
+CREATE TABLE toners (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    nombre NVARCHAR(50) NULL
+);
+
+CREATE TABLE users (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    username NVARCHAR(50) NOT NULL,
+    password NVARCHAR(255) NOT NULL,
+    first_name NVARCHAR(50) NULL,
+    last_name NVARCHAR(50) NULL,
+    rol NVARCHAR(50) NULL,
+    CONSTRAINT UQ_Users_536C85E487E76B5B UNIQUE (username)
+);
