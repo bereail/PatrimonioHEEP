@@ -1,0 +1,101 @@
+﻿{
+   "CodeGenerationMode": 3,
+   "ContextClassName": "InventarioDBContext",
+   "ContextNamespace": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "PatrimonioAPI",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 2,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[articulos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[caja_chica]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[cargas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[codigo_computos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[componentes_historiales]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[components]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[metodos_adquisicion]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[pc]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[pc_historiales]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[pc_nombres]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[pedidos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[proveedores]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[servicios]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[toners]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[users]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": null,
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": false,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UsePrefixNavigationNaming": false,
+   "UseSchemaFolders": true,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false
+}
