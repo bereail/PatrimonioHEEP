@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "P0ACz7L3OU/YCj9UpfG+HrOw/dW6VdmN7YN/44t+hggyiLfdjMqTmo7kT0UFGwjMJnmbO4eWoHiczR/z5n+Mew==",
+  "dgSpecHash": "nqI3fDdix9YsxITJt4PkFIAVkHsFPX1+fdAQl5Ui3Flvv5+oRFTGGekgyTXht2XVhEcAeuu0ElYkDx8PErOP+w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrador\\Desktop\\InventarioHEEP\\PatrimonioAPI\\PatrimonioAPI\\PatrimonioAPI.csproj",
+  "projectFilePath": "C:\\Users\\Administrador\\Desktop\\Bere\\HEEP\\PatrimonioHEEP\\InventarioHEEP\\PatrimonioAPI\\PatrimonioAPI\\PatrimonioAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrador\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

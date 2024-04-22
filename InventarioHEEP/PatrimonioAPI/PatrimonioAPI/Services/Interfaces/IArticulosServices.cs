@@ -6,5 +6,6 @@ namespace PatrimonioAPI.Services.Interfaces
     public interface IArticulosServices
     {
         IActionResult CrearArticulos(ArticulosDTO articulosDTO);
+
     }
 }
